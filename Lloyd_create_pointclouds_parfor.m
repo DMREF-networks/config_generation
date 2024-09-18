@@ -7,23 +7,22 @@
 
 rng('shuffle')
 
-% fln = 'paths_N2000_sims20_240830.mat';  % file to save data
-fln = 'test.mat';
+fln = 'test.mat'; % file to save data
 
 n_sims = 1;    % number of simulations
 n_node = 500;    % number of nodes
-crs = [0 0; 0 2000; 2000 2000; 2000 0]; % box to contain points
+crs = [0 0; 0 2000; 2000 2000; 2000 0]; % corners of box to contain points
 
 % this vector defines the iterations to collect data at in future runs
 % Iter = [0 round(logspace(0,2,8))]; 
-Iter = [0:1];
+Iter = [0:100];
 numIterations = max(Iter);
 
 x_loc = cell(n_sims,numIterations+1);
 y_loc = cell(n_sims,numIterations+1);
 
-% parfor k=1:n_sims
-for k=1:n_sims
+parfor k=1:n_sims
+
     fprintf('simulation %d of %d\n',k,n_sims)
 
     x_tmp = cell(1,numIterations);
@@ -31,9 +30,6 @@ for k=1:n_sims
 
     x = 2000*rand(n_node,1);
     y = 2000*rand(n_node,1);
-
-    % [x,y,Amatrix] = find_corners_adjacency(x,y,crs); % DT
-    [x,y,Amatrix] = find_corners_adjacency_voronoi(x,y,crs); % VT
 
     % x(simulation, iternation) - save every iteration
     x_tmp{1,1}=x;
@@ -43,7 +39,6 @@ for k=1:n_sims
     for kn = 1:numIterations
 
         [x, y] = lloydsAlgorithm(x,y, crs, 1, false);
-        [x,y,Amatrix] = find_corners_adjacency(x,y,crs);
 
         % x(simulation, iternation)
         x_tmp{1,kn+1}=x;

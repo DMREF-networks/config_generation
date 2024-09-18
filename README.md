@@ -3,7 +3,7 @@ Will be public repository that has point cloud + Lloyds + Delauney
 
 # Lloyd_create_pointclouds_parfor.m
 
-Main script to generate initial point clouds and iteratively move them via Lloyds algorithm in a bounded box.  Important variables:
+Main script to generate initial point clouds and iteratively move them via Lloyds algorithm in a bounded box.  Important variables:\\
 n_sims: number of independent point clouds to generate
 n_node: number of points within each point cloud
 crs: the four corners of the bounding box to contain the point within

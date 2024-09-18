@@ -13,7 +13,7 @@ Main script to generate initial point clouds and iteratively move them via Lloyd
 
   numIterations: how many times Lloyd's algorithm should be applied to the data
 
-    Iter: not used here other than to determine numIterations, a vector used to specify at what iterations future analysis should be run on
+  Iter: not used here other than to determine numIterations, a vector used to specify at what iterations future analysis should be run on
   
   x_loc and y_loc: cells to contain the x and y coordinates of the point cloud for each simulation and each iteration of Lloyds algorithm
 

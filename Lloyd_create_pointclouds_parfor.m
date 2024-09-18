@@ -7,7 +7,7 @@
 
 rng('shuffle')
 
-fln = 'test.mat'; % file to save data
+fln = 'filename.mat'; % file to save data
 
 n_sims = 1;    % number of simulations
 n_node = 500;    % number of nodes

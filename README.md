@@ -1,6 +1,6 @@
 # config_generation
 
-A repository for generating disordered network metamaterial descriptions of point cloud point locations in 2D.
+A repository for generating point cloud point locations in 2D to be created into disordered network metamaterial.
 
 # Lloyd_create_pointclouds_parfor.m
 

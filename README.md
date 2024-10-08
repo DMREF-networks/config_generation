@@ -1,5 +1,6 @@
 # config_generation
-Will be public repository that has point cloud + Lloyds + Delauney
+
+A repository for generating disordered network metamaterial descriptions of point cloud point locations in 2D.
 
 # Lloyd_create_pointclouds_parfor.m
 
